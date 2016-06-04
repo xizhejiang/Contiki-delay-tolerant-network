@@ -1,0 +1,186 @@
+using saved target 'OrisenPrime'
+using saved defines 'WITH_NULLMAC=1'
+compiling file dtn.upload
+make  dtn 
+using saved target 'OrisenPrime'
+using saved defines 'WITH_NULLMAC=1'
+make[1]: Entering directory `/home/user/Contiki/examples/for_students'
+ln -sf ../../../cpu/mc1322x/board/OrisenPrime.h obj_OrisenPrime/board.h
+make[1]: Leaving directory `/home/user/Contiki/examples/for_students'
++++++ Programming dtn
+sudo ../../tools/OrisenPrime/mc1322x-load.pl -f ../../tools/OrisenPrime/flasher_OrisenPrime.bin -s  dtn_OrisenPrime.bin -t /dev/ttyUSB1 -c '../../tools/OrisenPrime/ftditools/bbmc -l OrisenPrime erase' && sleep 2
+<press reset button>
+Found 1 devices with vendor id 0x0403 product id 0x6010
+Opening device 0 interface 1 using layout OrisenPrime
+setting VREF2 erase
+toggle reset
+waiting for erase
+setting VREF2 normal
+toggle reset
+done.
+CONNECT
+Size: 6960 bytes
+Sending ../../tools/OrisenPrime/flasher_OrisenPrime.bin
+secondary send...
+Detecting internal nvm
+nvm_detect returned: 0x00 type is: 0x00000001
+nvm_erase returned: 0x00
+ type is: 0x00000001
+ready
+Size: 39280 bytes
+Sending dtn_OrisenPrime.bin
+done sending files.
+len: 00009970
+ type is: 0x00000001
+nvm_write returned: 0x00
+flasher done
+loading rime address from flash.
+
+
+
+
+********************************
+Firmware version 1.2
+********************************
+Rime started with address 00:C0
+CSMA nullrdc, channel check rate 100 Hz, radio channel 26
+Starting 'Broadcast process' 'runicast test' 'print cache' 'create local'
+config: L:4, BC:500, TX_PWR:1--0
+[random]:6
+[MSG-CRT] <128.2:128.6:0> --0
+[random]:7
+[MSG-CRT] <128.2:128.7:1> --0
+[BC] @5
+[BC] @10
+[BC] @15
+[BC] @20
+[BC] @25
+[BC] @30
+[BC] @35
+[BC] @40
+[BC] @45
+[BC] @50
+[BC] @55
+[BC] @60
+[BC] @65
+[BC] @70
+[BC] @75
+[BC] @80
+[BC] @85
+[RCV-BC] from 128.5 (89)
+recieved sum_vec_entry->0->->128:6--128:1
+recieved sum_vec_entry->1->->128:2--128:1
+[B_MSG] from 128.5 MSG payloads<ver:0 type:1 len:2>
+recived different msg from what I have and will add ale2
+recived different msg from what I have and will add ale1
+-----------------------------------------------------------------
+|printf cache timestamp:--89
+|print my cache: ale2 |dest:128.7 |src:128.2 |seq: 1|number_of_copies:4|tosend:1
+|print my cache: ale1 |dest:128.6 |src:128.2 |seq: 0|number_of_copies:4|tosend:1
+-----------------------------------------------------------------
+[BC] @90
+[SND-RAW] <128.2:128.7:1 msg:ale2> --90
+[SND-RAW] <128.2:128.6:0 msg:ale1> --90
+[WARNING]message can not send because of being transmissions
+runicast message timed out when sending to 128.5 at timestamp:93, retransmissions 4
+[TMOUT] <128.2:128.7:1>to 128.5, rtx 4
+[TMOUT] <128.2:128.6:0>to 128.5, rtx 4
+[BC] @95
+[RCV-BC] from 128.1 (96)
+recieved sum_vec_entry->0->->128:2--128:1
+recieved sum_vec_entry->1->->128:7--128:6
+recieved sum_vec_entry->2->->128:7--128:6
+[B_MSG] from 128.1 MSG payloads<ver:0 type:1 len:3>
+recived different msg from what I have and will add ale2
+recived different msg from what I have and will add ale1
+-----------------------------------------------------------------
+|printf cache timestamp:--96
+|print my cache: ale2 |dest:128.7 |src:128.2 |seq: 1|number_of_copies:4|tosend:1
+|print my cache: ale1 |dest:128.6 |src:128.2 |seq: 0|number_of_copies:4|tosend:1
+-----------------------------------------------------------------
+[BC] @100
+[SND-RAW] <128.2:128.7:1 msg:ale2> --100
+[SND-RAW] <128.2:128.6:0 msg:ale1> --100
+[WARNING]message can not send because of being transmissions
+runicast message timed out when sending to 128.1 at timestamp:103, retransmissions 4
+[TMOUT] <128.2:128.7:1>to 128.1, rtx 4
+[TMOUT] <128.2:128.6:0>to 128.1, rtx 4
+[BC] @105
+[BC] @110
+[BC] @115
+[BC] @120
+[BC] @125
+[BC] @130
+[RCV-RAW] from 128.5 --130
+runicast message received from =>128.5 
+recieved unicast header length:1
+-----------------------------------------------------------------
+show all recieved unicast MSG->:This with seq: 2 dest:128.2
+-----------------------------------------------------------------
+recived different msg: This
+[RCV-RCH] <128.1:128.2:2> from 128.5--130
+[BC] @135
+[RCV-BC] from 128.5 (137)
+recieved sum_vec_entry->0->->128:6--128:1
+recieved sum_vec_entry->1->->128:4--128:7
+[B_MSG] from 128.5 MSG payloads<ver:0 type:1 len:2>
+recived different msg from what I have and will add ale2
+recived different msg from what I have and will add ale1
+-----------------------------------------------------------------
+|printf cache timestamp:--137
+|print my cache: ale2 |dest:128.7 |src:128.2 |seq: 1|number_of_copies:4|tosend:1
+|print my cache: ale1 |dest:128.6 |src:128.2 |seq: 0|number_of_copies:4|tosend:1
+-----------------------------------------------------------------
+[BC] @140
+[SND-RAW] <128.2:128.7:1 msg:ale2> --140
+[SND-RAW] <128.2:128.6:0 msg:ale1> --140
+[WARNING]message can not send because of being transmissions
+runicast message timed out when sending to 128.5 at timestamp:143, retransmissions 4
+[TMOUT] <128.2:128.7:1>to 128.5, rtx 4
+[TMOUT] <128.2:128.6:0>to 128.5, rtx 4
+[BC] @145
+[BC] @150
+[BC] @155
+[RCV-BC] from 128.3 (157)
+recieved sum_vec_entry->0->->128:2--128:1
+recieved sum_vec_entry->1->->128:6--128:1
+recieved sum_vec_entry->2->->128:7--128:3
+[B_MSG] from 128.3 MSG payloads<ver:1 type:1 len:3>
+recived different msg from what I have and will add ale2
+recived different msg from what I have and will add ale1
+-----------------------------------------------------------------
+|printf cache timestamp:--157
+|print my cache: ale2 |dest:128.7 |src:128.2 |seq: 1|number_of_copies:4|tosend:1
+|print my cache: ale1 |dest:128.6 |src:128.2 |seq: 0|number_of_copies:4|tosend:1
+-----------------------------------------------------------------
+[BC] @160
+[SND-RAW] <128.2:128.7:1 msg:ale2> --160
+[SND-RAW] <128.2:128.6:0 msg:ale1> --160
+[WARNING]message can not send because of being transmissions
+
+->->->runicast message sent to 128.3 at timestamp:162, retransmissions 3
+[ACK-SENT] <128.2:128.7:1>to 128.3, rtx 3
+[ACK-SENT] <128.2:128.6:0>to 128.3, rtx 3
+[BC] @165
+[BC] @170
+[RCV-BC] from 128.3 (170)
+recieved sum_vec_entry->0->->128:6--128:2
+recieved sum_vec_entry->1->->128:7--128:6
+recieved sum_vec_entry->2->->128:7--128:6
+recieved sum_vec_entry->3->->128:2--128:1
+recieved sum_vec_entry->4->->128:6--128:1
+[B_MSG] from 128.3 MSG payloads<ver:1 type:1 len:5>
+recived different msg from what I have and will add ale2
+-----------------------------------------------------------------
+|printf cache timestamp:--170
+|print my cache: ale2 |dest:128.7 |src:128.2 |seq: 1|number_of_copies:2|tosend:1
+|print my cache: ale1 |dest:128.6 |src:128.2 |seq: 0|number_of_copies:2|tosend:0
+-----------------------------------------------------------------
+[SND-RAW] <128.2:128.7:1 msg:ale2> --175
+[WARNING]message can not send because of being transmissions
+[BC] @175
+runicast message timed out when sending to 128.3 at timestamp:178, retransmissions 4
+[TMOUT] <128.2:128.7:1>to 128.3, rtx 4
+[BC] @180
+[BC] @185
+[BC] @190

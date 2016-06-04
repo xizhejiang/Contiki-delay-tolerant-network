@@ -1,0 +1,19 @@
+[MSG-CRT] - src:(128.1), Dst:(128.8) SEQ:(1) T:(1)
+[MSG-CRT] - src:(128.1), Dst:(128.4) SEQ:(2) T:(2)
+[RCV-RCH] src(128.6) dest(128.1) SEQ:1 from:(128.8) T:(70) 
+[RCV-RCH] src(128.2) dest(128.1) SEQ:0 from:(128.8) T:(70) 
+[RCV-RCH] src(128.7) dest(128.1) SEQ:1 from:(128.9) T:(108) 
+<< DTN ROUTER Address [128:1] Power:1 BC:229, UC:244 L:4 >> 
+[MSG-CRT] - src:(128.1), Dst:(128.2) SEQ:(1) T:(1)
+[MSG-CRT] - src:(128.1), Dst:(128.9) SEQ:(2) T:(2)
+[RCV-RCH] src(128.3) dest(128.1) SEQ:1 from:(128.3) T:(50) 
+[RCV-RCH] src(128.5) dest(128.1) SEQ:1 from:(128.7) T:(87) 
+<< DTN ROUTER Address [128:1] Power:1 BC:229, UC:244 L:8 >> 
+[MSG-CRT] - src:(128.1), Dst:(128.2) SEQ:(1) T:(3)
+[MSG-CRT] - src:(128.1), Dst:(128.6) SEQ:(2) T:(4)
+[RCV-RCH] src(128.4) dest(128.1) SEQ:1 from:(128.4) T:(8) 
+[RCV-RCH] src(128.3) dest(128.1) SEQ:0 from:(128.3) T:(24) 
+<< DTN ROUTER Address [128:1] Power:1 BC:229, UC:244 L:16 >> 
+[MSG-CRT] - src:(128.1), Dst:(128.6) SEQ:(1) T:(1)
+[MSG-CRT] - src:(128.1), Dst:(128.9) SEQ:(2) T:(3)
+[RCV-RCH] src(128.5) dest(128.1) SEQ:0 from:(128.9) T:(85)

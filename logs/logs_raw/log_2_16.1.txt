@@ -1,0 +1,187 @@
+using saved target 'OrisenPrime'
+using saved defines 'WITH_NULLMAC=1'
+compiling file dtn.upload
+make  dtn 
+using saved target 'OrisenPrime'
+using saved defines 'WITH_NULLMAC=1'
+make[1]: Entering directory `/home/user/Contiki/examples/for_students'
+ln -sf ../../../cpu/mc1322x/board/OrisenPrime.h obj_OrisenPrime/board.h
+arm-none-eabi-gcc -DPROJECT_CONF_H=\"project-conf.h\" -DCONTIKI=1 -DCONTIKI_TARGET_ORISENPRIME=1 -I. -I../../core -I../../cpu/mc1322x -I../../cpu/mc1322x/loader -I../../cpu/mc1322x/dbg-io -I../../platform/OrisenPrime -I../../cpu/mc1322x/lib/include -I../../cpu/mc1322x/src -I../../cpu/mc1322x/board  -DWITH_ASCII -DMCK= -Werror -mcpu=arm7tdmi-s -mthumb-interwork -march=armv4t -mtune=arm7tdmi-s -mlong-calls -DCONFIG_ARM -D__ARM__  -g  -Os -DRUN_AS_SYSTEM -DROM_RUN -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -DTEXT_BASE=0x00400000 -fno-builtin-printf -fno-builtin-sprintf -ffunction-sections -fdata-sections -MMD  -Iobj_OrisenPrime -I../../cpu/mc1322x/board -DBOARD=OrisenPrime -DWITH_NULLMAC=1 -I. -I../../platform/OrisenPrime/. -I../../platform/OrisenPrime/dev -I../../platform/OrisenPrime/apps -I../../platform/OrisenPrime/net -I../../platform/OrisenPrime/dev/include -I../../cpu/mc1322x/. -I../../cpu/mc1322x/lib -I../../cpu/mc1322x/src -I../../cpu/mc1322x/board -I../../cpu/mc1322x/dev -I../../cpu/mc1322x/../arm/common/dbg-io -I../../core/dev -I../../core/lib -I../../core/net -I../../core/net/mac -I../../core/net/rime -I../../core/net/rpl -I../../core/sys -I../../core/cfs -I../../core/ctk -I../../core/lib/ctk -I../../core/loader -I../../core/. -I../../platform/OrisenPrime/ -DAUTOSTART_ENABLE -mthumb -mcallee-super-interworking dtn.c -c -o dtn.co
+arm-none-eabi-gcc -T ../../cpu/mc1322x/mc1322x.lds -nostartfiles -static -u_start -Wl,-Map=contiki-OrisenPrime.map,-export-dynamic,--gc-sections -DPROJECT_CONF_H=\"project-conf.h\" -DCONTIKI=1 -DCONTIKI_TARGET_ORISENPRIME=1 -I. -I../../core -I../../cpu/mc1322x -I../../cpu/mc1322x/loader -I../../cpu/mc1322x/dbg-io -I../../platform/OrisenPrime -I../../cpu/mc1322x/lib/include -I../../cpu/mc1322x/src -I../../cpu/mc1322x/board  -DWITH_ASCII -DMCK= -Werror -mcpu=arm7tdmi-s -mthumb-interwork -march=armv4t -mtune=arm7tdmi-s -mlong-calls -DCONFIG_ARM -D__ARM__  -g  -Os -DRUN_AS_SYSTEM -DROM_RUN -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -DTEXT_BASE=0x00400000 -fno-builtin-printf -fno-builtin-sprintf -ffunction-sections -fdata-sections -MMD  -Iobj_OrisenPrime -I../../cpu/mc1322x/board -DBOARD=OrisenPrime -DWITH_NULLMAC=1 -I. -I../../platform/OrisenPrime/. -I../../platform/OrisenPrime/dev -I../../platform/OrisenPrime/apps -I../../platform/OrisenPrime/net -I../../platform/OrisenPrime/dev/include -I../../cpu/mc1322x/. -I../../cpu/mc1322x/lib -I../../cpu/mc1322x/src -I../../cpu/mc1322x/board -I../../cpu/mc1322x/dev -I../../cpu/mc1322x/../arm/common/dbg-io -I../../core/dev -I../../core/lib -I../../core/net -I../../core/net/mac -I../../core/net/rime -I../../core/net/rpl -I../../core/sys -I../../core/cfs -I../../core/ctk -I../../core/lib/ctk -I../../core/loader -I../../core/. -I../../platform/OrisenPrime/ -nostartfiles -o dtn.elf obj_OrisenPrime/board.h dtn.co obj_OrisenPrime/contiki-prime-main.o obj_OrisenPrime/start.o contiki-OrisenPrime.a contiki-OrisenPrime.a
+arm-none-eabi-objcopy -O binary dtn.elf dtn_OrisenPrime.bin
+rm dtn.co dtn.elf
+make[1]: Leaving directory `/home/user/Contiki/examples/for_students'
++++++ Programming dtn
+sudo ../../tools/OrisenPrime/mc1322x-load.pl -f ../../tools/OrisenPrime/flasher_OrisenPrime.bin -s  dtn_OrisenPrime.bin -t /dev/ttyUSB1 -c '../../tools/OrisenPrime/ftditools/bbmc -l OrisenPrime erase' && sleep 2
+<press reset button>
+Found 1 devices with vendor id 0x0403 product id 0x6010
+Opening device 0 interface 1 using layout OrisenPrime
+setting VREF2 erase
+toggle reset
+waiting for erase
+setting VREF2 normal
+toggle reset
+done.
+CONNECT
+Size: 6960 bytes
+Sending ../../tools/OrisenPrime/flasher_OrisenPrime.bin
+secondary send...
+Detecting internal nvm
+nvm_detect returned: 0x00 type is: 0x00000001
+nvm_erase returned: 0x00
+ type is: 0x00000001
+ready
+Size: 39280 bytes
+Sending dtn_OrisenPrime.bin
+done sending files.
+len: 00009970
+ type is: 0x00000001
+nvm_write returned: 0x00
+flasher done
+loading rime address from flash.
+
+
+
+
+********************************
+Firmware version 1.2
+********************************
+Rime started with address 00:C0
+CSMA nullrdc, channel check rate 100 Hz, radio channel 26
+Starting 'Broadcast process' 'runicast test' 'print cache' 'create local'
+config: L:16, BC:500, TX_PWR:1--0
+[random]:1
+[MSG-CRT] <128.2:128.1:0> --0
+[random]:8
+[MSG-CRT] <128.2:128.8:1> --0
+[BC] @5
+[BC] @10
+[BC] @15
+[BC] @20
+[BC] @25
+[BC] @30
+[BC] @35
+[BC] @40
+[BC] @45
+[RCV-BC] from 128.4 (47)
+recieved sum_vec_entry->0->->128:2--128:4
+recieved sum_vec_entry->1->->128:6--128:4
+[B_MSG] from 128.4 MSG payloads<ver:7 type:1 len:2>
+recived different msg from what I have and will add ale2
+recived different msg from what I have and will add ale1
+-----------------------------------------------------------------
+|printf cache timestamp:--47
+|print my cache: ale2 |dest:128.8 |src:128.2 |seq: 1|number_of_copies:16|tosend:1
+|print my cache: ale1 |dest:128.1 |src:128.2 |seq: 0|number_of_copies:16|tosend:1
+-----------------------------------------------------------------
+[BC] @50
+[SND-RAW] <128.2:128.8:1 msg:ale2> --50
+[SND-RAW] <128.2:128.1:0 msg:ale1> --50
+[WARNING]message can not send because of being transmissions
+-------------------local history locked------------------
+-----------------------------------------------------------------
+|printf cache timestamp:--52
+|print my cache: ale2 |dest:128.8 |src:128.2 |seq: 1|number_of_copies:16|tosend:1
+|print my cache: ale1 |dest:128.1 |src:128.2 |seq: 0|number_of_copies:16|tosend:1
+-----------------------------------------------------------------
+runicast message timed out when sending to 128.4 at timestamp:53, retransmissions 4
+[TMOUT] <128.2:128.8:1>to 128.4, rtx 4
+[TMOUT] <128.2:128.1:0>to 128.4, rtx 4
+[BC] @55
+[BC] @60
+[BC] @65
+[BC] @70
+[BC] @75
+[BC] @80
+[BC] @85
+[BC] @90
+[RCV-BC] from 128.5 (90)
+recieved sum_vec_entry->0->->128:1--128:6
+recieved sum_vec_entry->1->->128:6--128:1
+recieved sum_vec_entry->2->->128:7--128:7
+recieved sum_vec_entry->3->->128:2--128:7
+[B_MSG] from 128.5 MSG payloads<ver:0 type:1 len:4>
+recived different msg from what I have and will add ale2
+recived different msg from what I have and will add ale1
+-----------------------------------------------------------------
+|printf cache timestamp:--90
+|print my cache: ale2 |dest:128.8 |src:128.2 |seq: 1|number_of_copies:16|tosend:1
+|print my cache: ale1 |dest:128.1 |src:128.2 |seq: 0|number_of_copies:16|tosend:1
+-----------------------------------------------------------------
+[SND-RAW] <128.2:128.8:1 msg:ale2> --95
+[SND-RAW] <128.2:128.1:0 msg:ale1> --95
+[WARNING]message can not send because of being transmissions
+[BC] @95
+runicast message timed out when sending to 128.5 at timestamp:98, retransmissions 4
+[TMOUT] <128.2:128.8:1>to 128.5, rtx 4
+[TMOUT] <128.2:128.1:0>to 128.5, rtx 4
+[BC] @100
+[BC] @105
+[BC] @110
+[BC] @115
+[BC] @120
+[BC] @125
+[BC] @130
+[BC] @135
+[RCV-BC] from 128.8 (135)
+recieved sum_vec_entry->0->->128:7--128:5
+recieved sum_vec_entry->1->->128:1--128:6
+recieved sum_vec_entry->2->->128:6--128:1
+recieved sum_vec_entry->3->->128:7--128:7
+recieved sum_vec_entry->4->->128:2--128:7
+[B_MSG] from 128.8 MSG payloads<ver:0 type:1 len:5>
+recived different msg from what I have and will add ale2
+recived different msg from what I have and will add ale1
+-----------------------------------------------------------------
+|printf cache timestamp:--135
+|print my cache: ale2 |dest:128.8 |src:128.2 |seq: 1|number_of_copies:16|tosend:1
+|print my cache: ale1 |dest:128.1 |src:128.2 |seq: 0|number_of_copies:16|tosend:1
+-----------------------------------------------------------------
+[BC] @140
+[SND-RAW] <128.2:128.8:1 msg:ale2> --140
+[SND-RAW] <128.2:128.1:0 msg:ale1> --140
+[WARNING]message can not send because of being transmissions
+runicast message timed out when sending to 128.8 at timestamp:143, retransmissions 4
+[TMOUT] <128.2:128.8:1>to 128.8, rtx 4
+[TMOUT] <128.2:128.1:0>to 128.8, rtx 4
+[BC] @145
+[BC] @150
+[RCV-BC] from 128.8 (153)
+recieved sum_vec_entry->0->->128:7--128:5
+recieved sum_vec_entry->1->->128:1--128:6
+recieved sum_vec_entry->2->->128:6--128:1
+recieved sum_vec_entry->3->->128:7--128:7
+recieved sum_vec_entry->4->->128:2--128:7
+[B_MSG] from 128.8 MSG payloads<ver:0 type:1 len:5>
+recived different msg from what I have and will add ale2
+recived different msg from what I have and will add ale1
+-----------------------------------------------------------------
+|printf cache timestamp:--153
+|print my cache: ale2 |dest:128.8 |src:128.2 |seq: 1|number_of_copies:16|tosend:1
+|print my cache: ale1 |dest:128.1 |src:128.2 |seq: 0|number_of_copies:16|tosend:1
+-----------------------------------------------------------------
+[SND-RAW] <128.2:128.8:1 msg:ale2> --155
+[SND-RAW] <128.2:128.1:0 msg:ale1> --155
+[WARNING]message can not send because of being transmissions
+[BC] @155
+runicast message timed out when sending to 128.8 at timestamp:158, retransmissions 4
+[TMOUT] <128.2:128.8:1>to 128.8, rtx 4
+[TMOUT] <128.2:128.1:0>to 128.8, rtx 4
+[BC] @160
+[RCV-RAW] from 128.8 --160
+runicast message received from =>128.8 
+recieved unicast header length:4
+-----------------------------------------------------------------
+show all recieved unicast MSG->:G with seq: 0 dest:128.1
+show all recieved unicast MSG->:Hi with seq: 1 dest:128.6
+show all recieved unicast MSG->:foo with seq: 1 dest:128.7
+show all recieved unicast MSG->:foo with seq: 2 dest:128.2
+-----------------------------------------------------------------
+recived different msg: G
+[RCV-ST] <128.6:128.1:0> from 128.8 --160 
+recived different msg: Hi
+[RCV-ST] <128.1:128.6:1> from 128.8 --160 
+recived different msg: foo
+[RCV-ST] <128.7:128.7:1> from 128.8 --160 
+recived different msg: foo
+[RCV-RCH] <128.7:128.2:2> from 128.8--160

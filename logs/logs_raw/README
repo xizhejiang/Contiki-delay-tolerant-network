@@ -1,0 +1,4 @@
+log file name explain:
+log_(local address)_L.round.txt
+
+PS: a printing problem occured in the raw log files(sometimes repeatly print [RCV-RCH] from the same address, not very often). However, the aggregate.txt is clean of that after aggregation.
